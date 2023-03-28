@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rendimento Poupança</h1>
+
+    <script>
+        const valorInvestido = parseFloat(prompt("Informe o valor investido:"));
+    const meses = parseInt(prompt("Informe a quantidade de meses:"));
+    const selic = parseFloat(prompt("Informe a SELIC (%):")) / 100;
+    const taxaReferencial = parseFloat(prompt("Informe a Taxa Referencial (%):")) / 100;
+
+    let rendimento;
+
+    if (selic < 8.5 / 100) {
+    rendimento = valorInvestido * (0.7 * selic + taxaReferencial) * meses;
+    } else {
+    rendimento = valorInvestido * (0.005 + taxaReferencial) * meses;
+    }
+
+    const resultado = valorInvestido + rendimento;
+
+    alert(`O resultado do investimento é: R$ ${resultado.toFixed(2)}`);
+    </script>
+</body>
+</html>
